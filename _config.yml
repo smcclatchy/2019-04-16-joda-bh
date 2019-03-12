@@ -7,10 +7,10 @@
 # dc: Data Carpentry
 # lc: Library Carpentry
 # cp: Carpentries (to use for instructor traning for instance)
-carpentry: "JAX Omics Data Analytics"
+carpentry: ""
 
 # Overall title for pages.
-title: "Workshop Title"
+title: "JAX Omics Data Analytics"
 
 
 #------------------------------------------------------------
