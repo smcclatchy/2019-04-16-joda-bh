@@ -8,7 +8,7 @@ country: "us"
 language: "en"
 latlng: "44.365646, -68.197153"
 humandate: "Apr 16, 2019"
-humantime: "Apr 16, 2019"
+humantime: "9:00am - 12:30pm"
 startdate: 2019-04-16
 enddate: 2019-04-16
 instructor: ["FIXME"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
@@ -102,7 +102,8 @@ address.
   Get directions with
   <a href="//www.openstreetmap.org/?mlat={{page.latlng | replace:',','&mlon='}}&zoom=16">OpenStreetMap</a>
   or
-  <a href="//maps.google.com/maps?q={{page.latlng}}">Google Maps</a>.
+  <a href="//maps.google.com/maps?q={{page.latlng}}">Google Maps</a>. The workshop will also be WebExed
+  to the JGM 3415 board room in Farmington, Connecticut.
 </p>
 {% endif %}
 
@@ -188,25 +189,6 @@ Display the contact email address set in the configuration file.
 
 <hr/>
 
-{% comment %} 
-SURVEYS - DO NOT EDIT SURVEY LINKS 
-{% endcomment %}
-<h2 id="surveys">Surveys</h2>
-<p>Please be sure to complete these surveys before and after the workshop.</p>
-{% if site.carpentry == "swc" %} 
-<p><a href="{{ site.swc_pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
-<p><a href="{{ site.swc_post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
-{% elsif site.carpentry == "dc" %}
-<p><a href="{{ site.dc_pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
-<p><a href="{{ site.dc_post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
-{% elsif site.carpentry == "lc" %}
-<p><a href="{{ site.lc_pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
-<p><a href="{{ site.lc_post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
-{% endif %}
-
-<hr/>
-
-
 {% comment %}
 SCHEDULE
 
@@ -215,14 +197,20 @@ to match your plans.  You may also want to change 'Day 1' and 'Day
 2' to be actual dates or days of the week.
 {% endcomment %}
 <h2 id="schedule">Schedule</h2>
-
-{% if page.carpentry == "swc" %}
-{% include sc/schedule.html %}
-{% elsif page.carpentry == "dc" %}
-{% include dc/schedule.html %}
-{% elsif page.carpentry == "lc" %}
-{% include lc/schedule.html %}
-{% endif %}
+<div class="row">
+<div class="col-md-6">
+<h3>Tuesday, April 16</h3>
+<table class="table table-striped">
+<tr> <td>09:00</td>  <td>Setup</td> </tr>
+<tr> <td>09:30</td>  <td>JODA demo</td> </tr>
+<tr> <td>10:15</td>  <td>Coffee / tea</td> </tr>
+<tr> <td>10:30</td>  <td>Data run</td> </tr>
+<tr> <td>11:30</td>  <td>Coffee / tea</td> </tr>
+<tr> <td>11:45</td>  <td>User data runs</td> </tr>
+<tr> <td>12:30</td>  <td>End</td> </tr>
+</table>
+</div>
+</div>
 
 {% comment %}
 Collaborative Notes
@@ -242,34 +230,6 @@ e.g., '2015-06-10-esu'.
 
 <hr/>
 
-{% comment %}
-SYLLABUS
-
-Show what topics will be covered.
-
-1. If your workshop is R rather than Python, remove the comment
-around that section and put a comment around the Python section.
-2. Some workshops will delete SQL.
-3. Please make sure the list of topics is synchronized with what you
-intend to teach.
-4. You may need to move the div's with class="col-md-6" around inside
-the div's with class="row" to balance the multi-column layout.
-
-This is one of the places where people frequently make mistakes, so
-please preview your site before committing, and make sure to run
-'tools/check' as well.
-{% endcomment %}
-<h2 id="syllabus">Syllabus</h2>
-
-{% if page.carpentry == "swc" %}
-{% include sc/syllabus.html %}
-{% elsif page.carpentry == "dc" %}
-{% include dc/syllabus.html %}
-{% elsif page.carpentry == "lc" %}
-{% include lc/syllabus.html %}
-{% endif %}
-
-<hr/>
 
 {% comment %}
 SETUP
@@ -399,69 +359,6 @@ please preview your site before committing, and make sure to run
     </div>
   </div>
 </div> {% comment %} End of 'shell' section. {% endcomment %}
-
-<div id="git"> {% comment %} Start of 'Git' section. GitHub browser compatability
-  is given at https://help.github.com/articles/supported-browsers/{% endcomment %}
-  <h3>Git</h3>
-  <p>
-    Git is a version control system that lets you track who made changes
-    to what when and has options for easily updating a shared or public
-    version of your code
-    on <a href="https://github.com/">github.com</a>. You will need a
-    <a href="https://help.github.com/articles/supported-browsers/">supported
-    web browser</a>.
-  </p>
-  <p>
-    You will need an account at <a href="https://github.com/">github.com</a>
-    for parts of the Git lesson. Basic GitHub accounts are free. We encourage
-    you to create a GitHub account if you don't have one already.
-    Please consider what personal information you'd like to reveal. For
-    example, you may want to review these
-    <a href="https://help.github.com/articles/keeping-your-email-address-private/">instructions
-      for keeping your email address private</a> provided at GitHub.
-  </p>
-
-  <div>
-    <ul class="nav nav-tabs nav-justified" role="tablist">
-      <li role="presentation" class="active"><a data-os="windows" href="#git-windows" aria-controls="Windows" role="tab" data-toggle="tab">Windows</a></li>
-      <li role="presentation"><a data-os="macos" href="#git-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
-      <li role="presentation"><a data-os="linux" href="#git-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
-    </ul>
-
-    <div class="tab-content">
-      <article role="tabpanel" class="tab-pane active" id="git-windows">
-        <p>
-          Git should be installed on your computer as part of your Bash
-          install (described above).
-        </p>
-      </article>
-      <article role="tabpanel" class="tab-pane active" id="git-macos">
-        <a href="https://www.youtube.com/watch?v=9LQhwETCdwY ">Video Tutorial</a>
-        <p>
-          <strong>For OS X 10.9 and higher</strong>, install Git for Mac
-          by downloading and running the most recent "mavericks" installer from
-          <a href="http://sourceforge.net/projects/git-osx-installer/files/">this list</a>.
-          Because this installer is not signed by the developer, you may have to
-          right click (control click) on the .pkg file, click Open, and click
-          Open on the pop up window. 
-          After installing Git, there will not be anything in your <code>/Applications</code> folder,
-          as Git is a command line program.
-          <strong>For older versions of OS X (10.5-10.8)</strong> use the
-          most recent available installer labelled "snow-leopard"
-          <a href="http://sourceforge.net/projects/git-osx-installer/files/">available here</a>.
-        </p>
-      </article>
-      <article role="tabpanel" class="tab-pane active" id="git-linux">
-        <p>
-          If Git is not already available on your machine you can try to
-          install it via your distro's package manager. For Debian/Ubuntu run
-          <code>sudo apt-get install git</code> and for Fedora run
-          <code>sudo dnf install git</code>.
-        </p>
-      </article>
-    </div>
-  </div>
-</div> {% comment %} End of 'Git' section. {% endcomment %}
 
 <div id="editor"> {% comment %} Start of 'editor' section. {% endcomment %}
   <h3>Text Editor</h3>
@@ -682,131 +579,3 @@ please preview your site before committing, and make sure to run
   </div>
 </div> {% comment %} End of 'R' section. {% endcomment %}
 
-<div id="sql"> {% comment %} Start of 'SQLite' section. {% endcomment %}
-  <h3>SQLite</h3>
-
-  <p>
-    SQL is a specialized programming language used with databases.  We
-    use a simple database manager called
-    <a href="https://www.sqlite.org/">SQLite</a> in our lessons.
-  </p>
-
-  <div>
-    <ul class="nav nav-tabs nav-justified" role="tablist">
-      <li role="presentation" class="active"><a data-os="windows" href="#sql-windows" aria-controls="Windows" role="tab" data-toggle="tab">Windows</a></li>
-      <li role="presentation"><a data-os="macos" href="#sql-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
-      <li role="presentation"><a data-os="linux" href="#sql-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
-    </ul>
-
-    <div class="tab-content">
-      <article role="tabpanel" class="tab-pane active" id="sql-windows">
-        <p>
-          The <a href="https://www.sqlite.org/download.html">
-            {% if page.carpentry == "swc" %}
-            Software Carpentry
-            {% elsif page.carpentry == "dc" %}
-            Data Carpentry
-            {% elsif page.carpentry == "lc" %}
-            Library Carpentry
-            {% endif %}
-            Windows Installer
-	  </a>
-          installs SQLite for Windows.
-          If you used the installer to configure nano, you don't need to run it again.
-        </p>
-      </article>
-      <article role="tabpanel" class="tab-pane active" id="sql-macos">
-        <p>
-          SQLite comes pre-installed on macOS.
-        </p>
-      </article>
-      <article role="tabpanel" class="tab-pane active" id="sql-linux">
-        <p>
-          SQLite comes pre-installed on Linux.
-        </p>
-      </article>
-    </div>
-  </div>
-
-  <p><strong>If you installed Anaconda, it also has a copy of SQLite
-      <a href="https://github.com/ContinuumIO/anaconda-issues/issues/307">without support to <code>readline</code></a>.
-      Instructors will provide a workaround for it if needed.</strong></p>
-</div> {% comment %} End of 'SQLite' section. {% endcomment %}
-
-<div id="openrefine"> {% comment %} Start of 'OpenRefine' section. {% endcomment %}
-  <h3>OpenRefine</h3>
-  <p>
-    For this lesson you will need <em>OpenRefine</em> and a
-    web browser. <em>Note:</em> this is a Java program that runs on your machine (not in the cloud).
-    It runs inside a web browser, but no web connection is needed.
-  </p>
-
-  <div>
-    <ul class="nav nav-tabs nav-justified" role="tablist">
-      <li role="presentation" class="active"><a data-os="windows" href="#openrefine-windows" aria-controls="Windows" role="tab" data-toggle="tab">Windows</a></li>
-      <li role="presentation"><a data-os="macos" href="#openrefine-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
-      <li role="presentation"><a data-os="linux" href="#openrefine-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
-    </ul>
-
-    <div class="tab-content">
-      <article role="tabpanel" class="tab-pane active" id="openrefine-windows">
-        <p>
-          Check that you have either the Firefox or the Chrome browser installed and set as your default browser.
-          <strong>OpenRefine runs in your default browser.</strong>
-          It will not run correctly in Internet Explorer.
-        </p>
-        <p>Download software from <a href="http://openrefine.org/">http://openrefine.org/</a></p>
-        <p>Create a new directory called OpenRefine.</p>
-        <p>Unzip the downloaded file into the OpenRefine directory by right-clicking and selecting "Extract ...". </p>
-        <p>Go to your newly created OpenRefine directory.</p>
-        <p>Launch OpenRefine by clicking <code>openrefine.exe</code> (this will launch a command prompt window, but you can ignore that - just wait for OpenRefine to open in the browser).</p>
-        <p>If you are using a different browser, or if OpenRefine does not automatically open for you, point your browser at <a href="http://127.0.0.1:3333/">http://127.0.0.1:3333/</a> or <a href="http://localhost:3333">http://localhost:3333</a> to use the program.</p>
-      </article>
-      <article role="tabpanel" class="tab-pane active" id="openrefine-macos">
-        <p>Check that you have either the Firefox or the Chrome browser installed and set as your default browser. <strong>OpenRefine runs in your default browser.</strong> It may not run correctly in Safari.</p>
-        <p>Download software from <a href="http://openrefine.org/">http://openrefine.org/</a>.</p>
-        <p>Create a new directory called OpenRefine.</p>
-        <p>Unzip the downloaded file into the OpenRefine directory by double-clicking it.</p>
-        <p>Go to your newly created OpenRefine directory.</p>
-        <p>Launch OpenRefine by dragging the icon into the Applications folder.</p>
-        <p>Use <code>Ctrl-click/Open ... </code> to launch it.</p>
-        <p>If you are using a different browser, or if OpenRefine does not automatically open for you, point your browser at <a href="http://127.0.0.1:3333/">http://127.0.0.1:3333/</a> or <a href="http://localhost:3333">http://localhost:3333</a> to use the program.</p>
-      </article>
-      <article role="tabpanel" class="tab-pane active" id="openrefine-linux">
-        <p>Check that you have either the Firefox or the Chrome browser installed and set as your default browser. <strong>OpenRefine runs in your default browser.</strong></p>
-        <p>Download software from <a href="http://openrefine.org/">http://openrefine.org/</a>.</p>
-        <p>Make a directory called OpenRefine.</p>
-        <p>Unzip the downloaded file into the OpenRefine directory.</p>
-        <p>Go to your newly created OpenRefine directory.</p>
-        <p>Launch OpenRefine by entering <code>./refine</code> into the terminal within the OpenRefine directory.</p>
-        <p>If you are using a different browser, or if OpenRefine does not automatically open for you, point your browser at <a href="http://127.0.0.1:3333/">http://127.0.0.1:3333/</a> or <a href="http://localhost:3333">http://localhost:3333</a> to use the program.</p>
-      </article>
-    </div>
-  </div>
-</div> {% comment %} End of 'OpenRefine' section. {% endcomment %}
-
-{% comment %}
-<div id="vm">
-  <h3>Virtual Machine</h3>
-
-  <p>
-    Some instructors prefer to have learners use a virtual machine (VM)
-    rather than install software on their own computers.  If your
-    instructors have chosen to do this, please:
-  </p>
-  <ol>
-    <li>
-      Install <a href="https://www.virtualbox.org/">VirtualBox</a>.
-    </li>
-    <li>
-      Download our <a href="{{site.swc_vm}}">VM image</a>.
-      <strong>Warning:</strong> this file is 1.7 GByte, so please
-      download it <em>before</em> coming to your workshop.
-    </li>
-    <li>
-      Load the VM into VirtualBox by selecting "Import Appliance" and
-      loading the <code>.ova</code> file.
-    </li>
-  </ol>
-</div>
-{% endcomment %}
