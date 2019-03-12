@@ -1,7 +1,6 @@
 ---
 layout: workshop      # DON'T CHANGE THIS.
-carpentry: ""    # what kind of Carpentry (must be either "lc" or "dc" or "swc").
-                      # Be sure to update the Carpentry type in _config.yml as well.  
+carpentry: ""
 venue: "JAX Omics Data Analytics"
 address: "Bioinformatics Training Room, bldg 1, unit 5, room 1540, 600 Main Street, Bar Harbor, Maine"
 country: "us"
@@ -102,8 +101,8 @@ address.
   Get directions with
   <a href="//www.openstreetmap.org/?mlat={{page.latlng | replace:',','&mlon='}}&zoom=16">OpenStreetMap</a>
   or
-  <a href="//maps.google.com/maps?q={{page.latlng}}">Google Maps</a>. The workshop will also be WebExed
-  to the JGM 3415 board room in Farmington, Connecticut.
+  <a href="//maps.google.com/maps?q={{page.latlng}}">Google Maps</a>.
+  The workshop will also be WebExed to the JGM 3415 board room in Farmington, Connecticut.
 </p>
 {% endif %}
 
@@ -127,14 +126,14 @@ Modify the block below if there are any special requirements.
 {% endcomment %}
 <p id="requirements">
   <strong>Requirements:</strong> Participants must bring a laptop with a
-  Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on. They should have a few specific software packages installed (listed <a href="#setup">below</a>).
+  Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.). They should have a few specific software packages installed (listed <a href="#setup">below</a>).
 </p>
 
 {% comment%}
 CODE OF CONDUCT
 {% endcomment %}
 <p id="code-of-conduct">
-<strong>Code of Conduct:</strong>  Everyone who participates in Carpentries activities is required to conform to the <a href="https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html">Code of Conduct</a>. This document also outlines how to report an incident if needed.
+<strong>Code of Conduct:</strong>  Everyone who participates is required to conform to the <a href="https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html">Code of Conduct</a>.
 </p>
 
 
@@ -277,7 +276,6 @@ please preview your site before committing, and make sure to run
       <li role="presentation"><a data-os="macos" href="#shell-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
       <li role="presentation"><a data-os="linux" href="#shell-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
     </ul>
-
     <div class="tab-content">
       <article role="tabpanel" class="tab-pane active" id="shell-windows">
         <a href="https://www.youtube.com/watch?v=339AEqk9c-8">Video Tutorial</a>
@@ -380,7 +378,6 @@ please preview your site before committing, and make sure to run
       <li role="presentation"><a data-os="macos" href="#editor-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
       <li role="presentation"><a data-os="linux" href="#editor-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
     </ul>
-
     <div class="tab-content">
       <article role="tabpanel" class="tab-pane active" id="editor-windows">
         <p>
@@ -424,158 +421,3 @@ please preview your site before committing, and make sure to run
     </div>
   </div>
 </div> {% comment %} End of 'editor' section. {% endcomment %}
-
-<div id="python"> {% comment %} Start of 'Python' section. Remove the third paragraph if
-  the workshop will teach Python using something other than
-  the Jupyter notebook.
-  Details at https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatibility {% endcomment %}
-  <h3>Python</h3>
-
-  <p>
-    <a href="https://python.org">Python</a> is a popular language for
-    research computing, and great for general-purpose programming as
-    well.  Installing all of its research packages individually can be
-    a bit difficult, so we recommend
-    <a href="https://www.anaconda.com/distribution/">Anaconda</a>,
-    an all-in-one installer.
-  </p>
-
-  <p>
-    Regardless of how you choose to install it,
-    <strong>please make sure you install Python version 3.x</strong>
-    (e.g., 3.6 is fine).
-  </p>
-
-  <p>
-    We will teach Python using the <a href="https://jupyter.org/">Jupyter notebook</a>,
-    a programming environment that runs in a web browser. For this to work you will need a reasonably
-    up-to-date browser. The current versions of the Chrome, Safari and
-    Firefox browsers are all
-    <a href="https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatibility">supported</a>
-    (some older browsers, including Internet Explorer version 9
-    and below, are not).
-  </p>
-
-  <div>
-    <ul class="nav nav-tabs nav-justified" role="tablist">
-      <li role="presentation" class="active"><a data-os="windows" href="#python-windows" aria-controls="Windows" role="tab" data-toggle="tab">Windows</a></li>
-      <li role="presentation"><a data-os="macos" href="#python-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
-      <li role="presentation"><a data-os="linux" href="#python-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
-    </ul>
-
-    <div class="tab-content">
-      <article role="tabpanel" class="tab-pane active" id="python-windows">
-        <a href="https://www.youtube.com/watch?v=xxQ0mzZ8UvA">Video Tutorial</a>
-        <ol>
-          <li>Open <a href="https://www.anaconda.com/download/#windows">https://www.anaconda.com/download/#windows</a> with your web browser.</li>
-          <li>Download the Python 3 installer for Windows.</li>
-          <li>Install Python 3 using all of the defaults for installation <em>except</em> make sure to check <strong>Add Anaconda to my PATH environment variable</strong>.</li>
-        </ol>
-      </article>
-      <article role="tabpanel" class="tab-pane active" id="python-macos">
-        <a href="https://www.youtube.com/watch?v=TcSAln46u9U">Video Tutorial</a>
-        <ol>
-          <li>Open <a href="https://www.anaconda.com/download/#macos">https://www.anaconda.com/download/#macos</a> with your web browser.</li>
-          <li>Download the Python 3 installer for OS X.</li>
-          <li>Install Python 3 using all of the defaults for installation.</li>
-        </ol>
-      </article>
-      <article role="tabpanel" class="tab-pane active" id="python-linux">
-        <ol>
-          <li>Open <a href="https://www.anaconda.com/download/#linux">https://www.anaconda.com/download/#linux</a> with your web browser.</li>
-          <li>Download the Python 3 installer for Linux.<br>
-            (The installation requires using the shell. If you aren't
-            comfortable doing the installation yourself
-            stop here and request help at the workshop.)
-          </li>
-          <li>
-            Open a terminal window.
-          </li>
-          <li>
-            Type <pre>bash Anaconda3-</pre> and then press
-            <kbd>Tab</kbd>. The name of the file you just downloaded should
-            appear. If it does not, navigate to the folder where you
-            downloaded the file, for example with:
-            <pre>cd Downloads</pre>
-            Then, try again.
-          </li>
-          <li>
-            Press <kbd>Return</kbd>. You will follow the text-only prompts. To move through
-            the text, press <kbd>Spacebar</kbd>. Type <code>yes</code> and
-            press enter to approve the license. Press enter to approve the
-            default location for the files. Type <code>yes</code> and
-            press enter to prepend Anaconda to your <code>PATH</code>
-            (this makes the Anaconda distribution the default Python).
-          </li>
-          <li>
-            Close the terminal window.
-          </li>
-        </ol>
-      </article>
-    </div>
-  </div>
-  {% comment %}
-  <p>
-    Once you are done installing the software listed above,
-    please go to <a href="setup/index.html">this page</a>,
-    which has instructions on how to test that everything was installed correctly.
-  </p>
-  {% endcomment %}
-</div> {% comment %} End of 'Python' section. {% endcomment %}
-
-<div id="r"> {% comment %} Start of 'R' section. {% endcomment %}
-  <h3>R</h3>
-
-  <p>
-    <a href="https://www.r-project.org">R</a> is a programming language
-    that is especially powerful for data exploration, visualization, and
-    statistical analysis. To interact with R, we use
-    <a href="https://www.rstudio.com/">RStudio</a>.
-  </p>
-
-  <div>
-    <ul class="nav nav-tabs nav-justified" role="tablist">
-      <li role="presentation" class="active"><a data-os="windows" href="#rstats-windows" aria-controls="Windows" role="tab" data-toggle="tab">Windows</a></li>
-      <li role="presentation"><a data-os="macos" href="#rstats-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
-      <li role="presentation"><a data-os="linux" href="#rstats-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
-    </ul>
-
-    <div class="tab-content">
-      <article role="tabpanel" class="tab-pane active" id="rstats-windows">
-        <a href="https://www.youtube.com/watch?v=q0PjTAylwoU">Video Tutorial</a>
-        <p>
-          Install R by downloading and running
-          <a href="https://cran.r-project.org/bin/windows/base/release.htm">this .exe file</a>
-          from <a href="https://cran.r-project.org/index.html">CRAN</a>.
-          Also, please install the
-          <a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio IDE</a>.
-          Note that if you have separate user and admin accounts, you should run the 
-          installers as administrator (right-click on .exe file and select "Run as 
-          administrator" instead of double-clicking). Otherwise problems may occur later, 
-          for example when installing R packages.
-        </p>
-      </article>
-      <article role="tabpanel" class="tab-pane active" id="rstats-macos">
-        <a href="https://www.youtube.com/watch?v=5-ly3kyxwEg">Video Tutorial</a>
-        <p>
-          Install R by downloading and running
-          <a href="https://cran.r-project.org/bin/macosx/R-latest.pkg">this .pkg file</a>
-          from <a href="https://cran.r-project.org/index.html">CRAN</a>.
-          Also, please install the
-          <a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio IDE</a>.
-        </p>
-      </article>
-      <article role="tabpanel" class="tab-pane active" id="rstats-linux">
-        <p>
-          You can download the binary files for your distribution
-          from <a href="https://cran.r-project.org/index.html">CRAN</a>. Or
-          you can use your package manager (e.g. for Debian/Ubuntu
-          run <code>sudo apt-get install r-base</code> and for Fedora run
-          <code>sudo dnf install R</code>).  Also, please install the
-          <a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio IDE</a>.
-        </p>
-      </article>
-    </div>
-  </div>
-</div> {% comment %} End of 'R' section. {% endcomment %}
-
